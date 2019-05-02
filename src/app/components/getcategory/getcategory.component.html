@@ -1,0 +1,33 @@
+<table border="1"
+        cellpadding="10px"
+        cellspacing="10px"
+        alignment="center"
+        style="font-size: 20px; text-align:center">
+
+
+        <thead style="background-color: grey">
+          <tr>
+            <th>Sr. No.</th>
+            <th>ID</th>
+            <th>Name</th>
+
+          </tr>
+        </thead>
+
+
+        <!--index is predefined keyword in Angular-->
+        <tbody>
+          <tr *ngFor="let x of records; let i=index">
+            <td>{{i+1}}</td>
+            <td>{{x.id}}</td> 
+            <td>{{x.name}}</td>
+          </tr>
+        </tbody>
+
+</table>
+<hr>
+<postcategory [var_one] = "records"></postcategory>
+<hr>
+<updatecategory [var_one] = "records"></updatecategory>
+<hr>
+<deletecategory [var_one] = "records"></deletecategory>

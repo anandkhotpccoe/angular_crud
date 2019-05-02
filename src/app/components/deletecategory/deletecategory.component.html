@@ -1,0 +1,14 @@
+<div align="centre">
+  <fieldset>
+    <legend>Delete</legend>
+    <div>
+      <label style="margin-right:100px">ID</label>
+      <input type="number" [(ngModel)] = "id">
+    </div>
+    <br>
+    <br>
+    <button (click)="remove({'id': id})"> Delete</button>
+
+  </fieldset>
+  <h1>{{result | json}}</h1>
+</div>

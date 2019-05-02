@@ -1,0 +1,19 @@
+<div align = "centre" >
+  <fieldset>
+    <legend>Insert</legend>
+    <div>
+      <label style="margin-right: 100px">ID</label>
+      <input type="number" [(ngModel)] = "id">
+    </div>
+    <br>
+    <br>
+    <div>
+      <label style="margin-right: 100px">Name</label>
+      <input type="text" [(ngModel)] = "name">
+    </div>
+    <div>
+      <button (click) = "update({'id': id, 'name': name})">Update</button>
+    </div>
+  </fieldset>
+
+</div>
