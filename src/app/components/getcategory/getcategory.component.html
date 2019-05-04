@@ -17,7 +17,17 @@
 
         <!--index is predefined keyword in Angular-->
         <tbody>
+          <!--There are three type of directive 
+              1)Structural
+              2)Component
+              3) Attribute
+            --Here we are using Structural Directive
+            --It is used to manipulate the DOM elements
+            --Structural Directive have * sign Before it
+          -->
           <tr *ngFor="let x of records; let i=index">
+            <!--This is String Interpolation
+                --Name of Component Property which is replaced as String hence called as String  Interpolation-->
             <td>{{i+1}}</td>
             <td>{{x.id}}</td> 
             <td>{{x.name}}</td>
@@ -26,6 +36,13 @@
 
 </table>
 <hr>
+<!--This is called Property Binding where in I am passing the data of one component to other
+  --There are four ways to bind the data
+    1)String Interpolation
+    2)Property Binding
+    3)Event Binding 
+    4)Two way data binding
+  --We are using Property Binding-->
 <postcategory [var_one] = "records"></postcategory>
 <hr>
 <updatecategory [var_one] = "records"></updatecategory>

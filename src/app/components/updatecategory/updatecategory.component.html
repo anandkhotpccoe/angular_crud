@@ -1,6 +1,6 @@
 <div align = "centre" >
   <fieldset>
-    <legend>Insert</legend>
+    <legend>Update</legend>
     <div>
       <label style="margin-right: 100px">ID</label>
       <input type="number" [(ngModel)] = "id">
@@ -8,10 +8,21 @@
     <br>
     <br>
     <div>
+      <!--
+        --This is two way data binding
+        --It is combination of both proprty and event binding
+        --Property: Binding a simple propery between view and componet
+        --Event:Update a value of certain variable on events such as click,hower etc
+        --Continuos Sync with REST API's (Component and View Level Data)
+      -->
       <label style="margin-right: 100px">Name</label>
       <input type="text" [(ngModel)] = "name">
     </div>
+
     <div>
+      <!--This is called Event Binding
+        --Update a value of certain variable on events such as click,hower etc
+        --It trasfer the data/information from presentation/view layer to Component Level-->
       <button (click) = "update({'id': id, 'name': name})">Update</button>
     </div>
   </fieldset>

@@ -18,6 +18,7 @@ import { FormsModule } from '@angular/forms';
     DeletecategoryComponent
   ],
   imports: [
+    //Importing Forms Module to deal with Form Data
     BrowserModule,FormsModule,HttpClientModule
   ],
   providers: [],

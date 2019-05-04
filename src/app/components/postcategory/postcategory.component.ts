@@ -9,6 +9,9 @@ import { HttpErrorResponse } from '@angular/common/http';
   styles: []
 })
 export class PostcategoryComponent implements OnInit {
+  /**
+   * --@Input is a decorater which is used to bind property to component
+   */
   @Input() var_one
   private result:any
   constructor(private _service:PostcategoryService) { }
