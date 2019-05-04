@@ -12,6 +12,10 @@ export class GetcategoryComponent implements OnInit {
   constructor(private _getCategoryService:GetcategoryService) { }
 
   ngOnInit() {
+    this.getCateogryList();
+  }
+
+  getCateogryList(){
     this._getCategoryService.getCategories().subscribe((posRes)=>{
       this.records = posRes.body
       console.log(posRes);

@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DeletecategoryService } from 'src/app/services/deletecategory.service';
 import { HttpErrorResponse } from '@angular/common/http';
+import { GetcategoryService } from 'src/app/services/getcategory.service';
+import { GetcategoryComponent } from '../getcategory/getcategory.component';
 
 @Component({
   selector: 'deletecategory',
@@ -11,7 +13,7 @@ export class DeletecategoryComponent implements OnInit {
 
   @Input() var_one;
   private result:any
-  constructor(private _service:DeletecategoryService) { }
+  constructor(private _service:DeletecategoryService, private _getService:GetcategoryService, private getCategoryComp: GetcategoryComponent) { }
 
   ngOnInit() {
 
@@ -22,13 +24,23 @@ export class DeletecategoryComponent implements OnInit {
     this._service.deleteCategory(obj).subscribe((posRes)=>{
         if(posRes.status == 1)
         {
-           for (let index = 0; index < this.var_one.length; index++) {
-             this.var_one.indexOf(obj.id)
-             this.var_one.splice(index,1)
+          //  for (let index = 0; index < this.var_one.length; index++) {
+          //    this.var_one.indexOf(obj.id)
+          //    this.var_one.splice(index,1)
              
-           }
+          //  }
+          // this._getService.getCategories().subscribe((res)=>{
+            
+          //   this.result = res.body
+            
+            
+          // })
+          this.getCategoryComp.getCateogryList();
+           
+           //this.result = this.result.body
 
-           this.result = posRes
+          // this.var_one.filter(obj=>obj.id == this.var_one.id );
+          // this.result = posRes
         }
     },
     (err:HttpErrorResponse)=>{
